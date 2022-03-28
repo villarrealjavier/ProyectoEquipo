@@ -50,7 +50,7 @@ public class Alumno {
 	public boolean equals(Object obj) {
 		boolean resultado=false;
 		Alumno other = (Alumno) obj;
-		if (other!=null) {
+		if (other!=null && other.getDNI()!=null) {
 			if (this.getDNI().equalsIgnoreCase(other.getDNI())) {
 				resultado=true;
 			}

@@ -65,18 +65,19 @@ class EquipoTest {
 	@Test
 	void testUnionEquiposInterseccion() {
 		
-		Alumno al1 = new Alumno();
-		Alumno al2 = new Alumno();
-		Alumno al3 = new Alumno();
+		Alumno al1 = new Alumno("AA332211", "Javier");
+		Alumno al2 = new Alumno("AA332200", "Fran");
+		Alumno al3 = new Alumno("AA332222", "Paco");
 		Equipo equipo1 = new Equipo();
 		equipo1.annadirALumno(al1);
 		equipo1.annadirALumno(al2);
-
+		equipo1.annadirALumno(al3);
+		
 		Equipo equipo2 = new Equipo();
 		equipo2.annadirALumno(al2);
 		equipo2.annadirALumno(al3);
 
-		assertTrue(equipo1.interseccionEquipos(equipo2).getListaAlumno().size()==1);
+		assertTrue(equipo1.interseccionEquipos(equipo2).getListaAlumno().size()==2);
 	}
 
 

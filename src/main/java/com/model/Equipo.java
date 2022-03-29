@@ -88,13 +88,15 @@ public class Equipo {
 		public Equipo interseccionEquipos(Equipo equipo1) {
 			Equipo equipoInterseccion = new Equipo();
 			List<Alumno> listaInterseccion = new ArrayList<Alumno>();
+			if (equipo1!=null) {
+		
 			for (int i=0;i<listaDeAlumnos.size();i++) {
 				if (equipo1.listaDeAlumnos.contains(this.listaDeAlumnos.get(i))) {
 					listaInterseccion.add(this.listaDeAlumnos.get(i));
 				}
 			
 			}equipoInterseccion.setListaAlumno(listaInterseccion);
-			
+			}
 			
 			return equipoInterseccion;
 		}

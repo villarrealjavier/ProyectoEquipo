@@ -1,33 +1,34 @@
 package main.java.com.model;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class Equipo {
-	private String nombreEquipo;
-	private List<Alumno> listaDeAlumnos = new ArrayList<Alumno>();
+public class Equipo<T> {
+	private T nombreEquipo;
+	private List<T> listaDeAlumnos = new ArrayList<T>();
 	
 	public Equipo() {
 		
 	}
 	
-	public Equipo(String nombreEquipo) {
+	public Equipo(T nombreEquipo) {
 		this.nombreEquipo=nombreEquipo;
 		
 	}
 	
-	public List<Alumno> getListaAlumno() {
+	public List<T> getListaAlumno() {
 		return listaDeAlumnos;
 	}
 
-	public void setListaAlumno(List<Alumno> listaAlumno) {
+	public void setListaAlumno(List<T> listaAlumno) {
 		this.listaDeAlumnos = listaAlumno;
 	}
 
 	//METHODS
-	public Boolean annadirALumno(Alumno a1) {
+	public Boolean annadirALumno(T a1) {
 		Boolean resultado=false;
 
 		if (listaDeAlumnos.contains(a1)) {
@@ -60,7 +61,7 @@ public class Equipo {
 			return a1;
 		}
 		
-		public List<Alumno> mostrarAlumnoEquipo(List<Alumno> lista) {
+		public List<T> mostrarAlumnoEquipo(List<T> lista) {
 			
 			return lista;
 			
@@ -68,8 +69,8 @@ public class Equipo {
 		
 		public Equipo unirEquipos(Equipo equipo1){
 			Equipo equipoDoble = new Equipo();
-			Set<Alumno> conjuntoEquipoUnido = new HashSet<Alumno>();
-			List<Alumno> equipoUnido = new ArrayList<Alumno>();
+			Set<T> conjuntoEquipoUnido = new HashSet<T>();
+			List<T> equipoUnido = new ArrayList<T>();
 			
 			if (equipo1!=null && listaDeAlumnos!=null) {
 				conjuntoEquipoUnido.addAll(listaDeAlumnos);
@@ -92,7 +93,7 @@ public class Equipo {
 		
 			for (int i=0;i<listaDeAlumnos.size();i++) {
 				if (equipo1.listaDeAlumnos.contains(this.listaDeAlumnos.get(i))) {
-					listaInterseccion.add(this.listaDeAlumnos.get(i));
+					listaInterseccion.add((Alumno) this.listaDeAlumnos.get(i));
 				}
 			
 			}equipoInterseccion.setListaAlumno(listaInterseccion);

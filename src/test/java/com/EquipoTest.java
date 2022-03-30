@@ -1,7 +1,7 @@
 package test.java.com;
 
-import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
@@ -79,6 +79,9 @@ class EquipoTest {
 
 		assertTrue(equipo1.interseccionEquipos(equipo2).getListaAlumno().size()==2);
 	}
+	
+	
+	
 
 
 }

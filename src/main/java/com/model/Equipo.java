@@ -7,14 +7,14 @@ import java.util.List;
 import java.util.Set;
 
 public class Equipo<T> {
-	private T nombreEquipo;
+	private String nombreEquipo;
 	private List<T> listaDeAlumnos = new ArrayList<T>();
 	
 	public Equipo() {
 		
 	}
 	
-	public Equipo(T nombreEquipo) {
+	public Equipo(String nombreEquipo) {
 		this.nombreEquipo=nombreEquipo;
 		
 	}
@@ -28,7 +28,7 @@ public class Equipo<T> {
 	}
 
 	//METHODS
-	public Boolean annadirALumno(T a1) {
+	public Boolean annadirALumno(T a1) throws Exception{
 		Boolean resultado=false;
 
 		if (listaDeAlumnos.contains(a1)) {
@@ -41,7 +41,7 @@ public class Equipo<T> {
 		}
 		return resultado;
 	}
-		public Boolean borrarAlumno(Alumno a1) {
+		public Boolean borrarAlumno(Alumno a1) throws Exception{
 			Boolean resultado=false;
 			
 			if (listaDeAlumnos.contains(a1)) {
@@ -62,12 +62,14 @@ public class Equipo<T> {
 		}
 		
 		public List<T> mostrarAlumnoEquipo(List<T> lista) {
-			
+				for (int i=0;i<lista.size();i++) {
+					System.out.println(lista.get(i));
+				}
 			return lista;
 			
 		}
 		
-		public Equipo unirEquipos(Equipo equipo1){
+		public Equipo unirEquipos(Equipo equipo1) throws Exception{
 			Equipo equipoDoble = new Equipo();
 			Set<T> conjuntoEquipoUnido = new HashSet<T>();
 			List<T> equipoUnido = new ArrayList<T>();
@@ -100,6 +102,16 @@ public class Equipo<T> {
 			}
 			
 			return equipoInterseccion;
+		}
+		
+		private <T> T[] reverseArray (T[] arrayReverse) {
+			List<T> arrayCreado = new ArrayList<T>();
+			for (int i=listaDeAlumnos.size();i==0;i--) {
+				arrayCreado.add((T) listaDeAlumnos.get(i));
+			}
+			
+			
+			return null;
 		}
 	
 	

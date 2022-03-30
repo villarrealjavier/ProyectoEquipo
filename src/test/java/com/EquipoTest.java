@@ -79,9 +79,72 @@ class EquipoTest {
 
 		assertTrue(equipo1.interseccionEquipos(equipo2).getListaAlumno().size()==2);
 	}
-	
-	
-	
 
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	@Test
+	void testAddAlumnoAtributosAumentaTamanioNumeros() {
+		
+		
+		Equipo equipoA = new Equipo();
+		Integer a1 = 4;
+		equipoA.annadirALumno(a1);
+		
+		assertEquals(equipoA.getListaAlumno().size(), 1);
+		
+	}
+
+	@Test
+	void testAddAlumnoClaseAumentaTamanioNumeros() {
+		Equipo equipoA = new Equipo();
+		Integer a1 = 2;
+		equipoA.annadirALumno(a1);
+		
+		assertEquals(equipoA.getListaAlumno().size(), 1);
+	}
+	
+	@Test
+	void testUnionEquiposVaciosNumeros() {
+		Equipo equipoA = new Equipo();
+		Equipo equipoB = new Equipo();
+
+		
+		assertTrue(equipoA.unirEquipos(equipoB).getListaAlumno().size()==0);
+	}
+	
+	@Test
+	void testUnionEquiposNoVaciosNumeros() {
+	
+		Integer al1 = 1;
+		Integer al2 = 2;
+		Integer al3 = 3;
+		Equipo equipo1 = new Equipo();
+		equipo1.annadirALumno(al1);
+		equipo1.annadirALumno(al2);
+
+		Equipo equipo2 = new Equipo();
+		equipo2.annadirALumno(al2);
+		equipo2.annadirALumno(al3);
+
+		assertTrue(equipo1.unirEquipos(equipo2).getListaAlumno().size()==3);
+	}
+	
+	@Test
+	void testUnionEquiposInterseccionNumero() {
+		
+		Integer al1 = 1;
+		Integer al2 = 2;
+		Integer al3 = 3;
+		Equipo equipo1 = new Equipo();
+		equipo1.annadirALumno(al1);
+		equipo1.annadirALumno(al2);
+		equipo1.annadirALumno(al3);
+		
+		Equipo equipo2 = new Equipo();
+		equipo2.annadirALumno(al2);
+		equipo2.annadirALumno(al3);
+
+		assertTrue(equipo1.interseccionEquipos(equipo2).getListaAlumno().size()==2);
+	}
 
 }

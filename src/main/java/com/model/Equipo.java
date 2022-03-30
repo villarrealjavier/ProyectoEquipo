@@ -28,7 +28,7 @@ public class Equipo<T> {
 	}
 
 	//METHODS
-	public Boolean annadirALumno(T a1) throws Exception{
+	public Boolean annadirALumno(T a1) {
 		Boolean resultado=false;
 
 		if (listaDeAlumnos.contains(a1)) {
@@ -41,7 +41,7 @@ public class Equipo<T> {
 		}
 		return resultado;
 	}
-		public Boolean borrarAlumno(Alumno a1) throws Exception{
+		public Boolean borrarAlumno(Alumno a1) {
 			Boolean resultado=false;
 			
 			if (listaDeAlumnos.contains(a1)) {
@@ -69,7 +69,7 @@ public class Equipo<T> {
 			
 		}
 		
-		public Equipo unirEquipos(Equipo equipo1) throws Exception{
+		public Equipo unirEquipos(Equipo equipo1) {
 			Equipo equipoDoble = new Equipo();
 			Set<T> conjuntoEquipoUnido = new HashSet<T>();
 			List<T> equipoUnido = new ArrayList<T>();
@@ -90,12 +90,12 @@ public class Equipo<T> {
 		
 		public Equipo interseccionEquipos(Equipo equipo1) {
 			Equipo equipoInterseccion = new Equipo();
-			List<Alumno> listaInterseccion = new ArrayList<Alumno>();
+			List<T> listaInterseccion = new ArrayList<T>();
 			if (equipo1!=null) {
 		
 			for (int i=0;i<listaDeAlumnos.size();i++) {
 				if (equipo1.listaDeAlumnos.contains(this.listaDeAlumnos.get(i))) {
-					listaInterseccion.add((Alumno) this.listaDeAlumnos.get(i));
+					listaInterseccion.add((T) this.listaDeAlumnos.get(i));
 				}
 			
 			}equipoInterseccion.setListaAlumno(listaInterseccion);
